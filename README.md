@@ -6,21 +6,25 @@ DSL for ViewPager and FragmentPagerAdapter in Kotlin
 ## Usage:
 ```kotlin
 viewPager.apply {
-	fragmentPagerAdapter(pageCount = 3, fragmentManager = supportFragmentManager) {
-		createItems { position ->
-			when (position) {
-				0 -> InputFragment()
-				1 -> OutputFragment()
-				2 -> AboutFragment()
-				else -> throw Exception("¯\\_(ツ)_/¯")
-			}
-		}
-	}
-	onPageSelected { position ->
-		//nice moves goes here.
-	}
-	clipToPadding = false
-	offscreenPageLimit = 2
+
+    fragmentPagerAdapter(pageCount = 3, fragmentManager = supportFragmentManager) {
+    
+        createItems { position ->
+            when (position) {
+                0 -> InputFragment()
+                1 -> OutputFragment()
+                2 -> AboutFragment()
+                else -> throw Exception("¯\\_(ツ)_/¯")
+            }
+        }
+    }
+    
+    onPageSelected { position ->
+        //nice moves goes here.
+    }
+    
+    clipToPadding = false
+    offscreenPageLimit = 2
 }
 ```
 ## Dependency:
@@ -37,6 +41,6 @@ allprojects {
 Add the dependency:
 ```groovy
 dependencies {
-	compile 'com.github.mhashim6:ViewPagerDSL:1.0.0'
+    compile 'com.github.mhashim6:ViewPagerDSL:1.0.0'
 }
 ```
