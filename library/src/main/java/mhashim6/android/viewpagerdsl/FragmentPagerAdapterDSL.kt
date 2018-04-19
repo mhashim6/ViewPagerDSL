@@ -8,15 +8,16 @@ import android.support.v4.view.ViewPager
 /**
  * Created by mhashim6 on 18/04/2018.
  */
+
 class FragmentPagerAdapterDSL(var pageCount: Int = 0, fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-	private lateinit var _onCreateItem: (position: Int) -> Fragment
+	private lateinit var onCreateItem: (position: Int) -> Fragment
 
 	fun createItems(action: (position: Int) -> Fragment) {
-		_onCreateItem = action
+		onCreateItem = action
 	}
 
-	override fun getItem(position: Int) = _onCreateItem.invoke(position)
+	override fun getItem(position: Int) = onCreateItem.invoke(position)
 	override fun getCount() = pageCount
 }
 

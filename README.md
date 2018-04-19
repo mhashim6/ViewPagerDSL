@@ -1,6 +1,6 @@
 
 # ViewPagerDSL
-DSL for ViewPager and FragmentPagerAdapter in Kotlin
+Kotlin DSL for ViewPager and FragmentPagerAdapter
 
 [![](https://jitpack.io/v/mhashim6/ViewPagerDSL.svg)](https://jitpack.io/#mhashim6/ViewPagerDSL)
 ## Usage:
@@ -20,7 +20,7 @@ viewPager.apply {
     }
     
     onPageSelected { position ->
-        //nice moves goes here.
+        //nice moves go here.
     }
     
     clipToPadding = false
@@ -41,6 +41,6 @@ allprojects {
 Add the dependency:
 ```groovy
 dependencies {
-    compile 'com.github.mhashim6:ViewPagerDSL:1.0.0'
+    implementation 'com.github.mhashim6:ViewPagerDSL:1.0.0'
 }
 ```
