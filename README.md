@@ -9,13 +9,21 @@ viewPager.apply {
 
     fragmentPagerAdapter(pageCount = 3, fragmentManager = supportFragmentManager) {
     
-        createItems { position ->
+        pages { position ->
             when (position) {
                 0 -> InputFragment()
                 1 -> OutputFragment()
                 2 -> AboutFragment()
                 else -> throw Exception("¯\\_(ツ)_/¯")
             }
+        }
+        
+        titles { position ->
+            when (position) {
+                0 -> "Entries"
+                1 -> "Results"
+                2 -> "About Us"
+                else -> "¯\\_(ツ)_/¯"
         }
     }
     

@@ -11,14 +11,21 @@ import android.support.v4.view.ViewPager
 
 class FragmentPagerAdapterDSL(var pageCount: Int = 0, fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
-	private lateinit var onCreateItem: (position: Int) -> Fragment
+	private var onCreateItem: (position: Int) -> Fragment = throw RuntimeException("pages() is not called")
+	private var onCreateTitle: (position: Int) -> CharSequence = { "" }
 
-	fun createItems(action: (position: Int) -> Fragment) {
+	fun pages(action: (position: Int) -> Fragment) {
 		onCreateItem = action
+	}
+
+	/**default implementation returns empty string */
+	fun titles(action: (position: Int) -> CharSequence) {
+		onCreateTitle = action
 	}
 
 	override fun getItem(position: Int) = onCreateItem.invoke(position)
 	override fun getCount() = pageCount
+	override fun getPageTitle(position: Int): CharSequence = onCreateTitle.invoke(position)
 }
 
 //Extensions
