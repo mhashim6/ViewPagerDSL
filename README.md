@@ -10,11 +10,11 @@ viewPager.apply {
     fragmentPagerAdapter(pageCount = 3, fragmentManager = supportFragmentManager) {
     
         pages { position ->
-			when (position) {
-				0 -> Pair(InputFragment(), "Entries")
-				1 -> Pair(OutputFragment(), "Result")
-				2 -> Pair(AboutFragment(), "About Us")
-				else -> throw Exception("¯\\_(ツ)_/¯")
+            when (position) {
+	            0 -> Pair(InputFragment(), "Entries")
+	            1 -> Pair(OutputFragment(), "Result")
+	            2 -> Pair(AboutFragment(), "About Us")
+	            else -> throw Exception("¯\\_(ツ)_/¯")
             }
         }
     
